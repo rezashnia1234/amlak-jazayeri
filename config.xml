@@ -21,7 +21,7 @@
 	<!-- <preference name='phonegap-version'			value='cli-7.0.1' /> -->
 	<!-- <preference name='phonegap-version'			value='cli-7.1.0' /> -->
     <preference name="phonegap-version"					value="cli-7.0.1" />
-	<preference name="orientation"						value="portrait" />		<!-- all: default means both landscape and portrait are enabled -->
+	<preference name="orientation"						value="portrait" />			<!-- all: default means both landscape and portrait are enabled -->
 	<preference name="target-device"					value="universal" />		<!-- all: possible values handset, tablet, or universal -->
 	<preference name="fullscreen"						value="true" />				<!-- all: hides the status bar at the top of the screen -->
 	<preference name="prerendered-icon"					value="true" />				<!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
@@ -51,7 +51,7 @@
 	<plugin name="cordova-plugin-whitelist" source="npm" />
 	<!-- <plugin spec="https://github.com/apache/cordova-plugin-battery-status.git" source="git" /> -->
     <!--<plugin spec="https://github.com/apache/cordova-plugin-media-capture.git" source="git" />-->
-	<plugin spec="https://github.com/apache/cordova-plugin-console.git" source="git" />
+	<!-- <plugin spec="https://github.com/apache/cordova-plugin-console.git" source="git" /> -->
 	<plugin name="cordova-plugin-device" source="npm" />
 	<!--<plugin spec="https://github.com/apache/cordova-plugin-device-motion.git" source="git" />-->
     <!--<plugin spec="https://github.com/apache/cordova-plugin-device-orientation.git" source="git" />-->
@@ -82,18 +82,14 @@
 
 	<plugin spec="https://github.com/Paldom/UniqueDeviceID.git" source="git" />
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git " source="git" />
-	<gap:config-file platform="ios" parent="UIStatusBarHidden">
-		<true/>
-	</gap:config-file>
-
-	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
-		<false/>
-	</gap:config-file>
-	<gap:config-file platform="ios" parent="UIBackgroundModes" overwrite="true">
-		<array>
-			<string>audio</string>
-		</array>
-	</gap:config-file>
+	<preference name="StatusBarOverlaysWebView"			value="false" />
+	<preference name="StatusBarBackgroundColor" value="#141D1A" />
+    <edit-config file="*-Info.plist" mode="overwrite" platform="ios" target="UIStatusBarHidden">
+        <true />
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="overwrite" platform="ios" target="UIViewControllerBasedStatusBarAppearance">
+        <false />
+    </edit-config>
 	
 
 	<!--<gap:plugin name="com.dawsonloudon.videoplayer" 	platform="android"	version="1.0.0" />-->
@@ -188,6 +184,8 @@
         <splash density="land-xxxhdpi" src="res/screen/android/splash-land-xxxhdpi.png"/>
         -->
     </platform>
+    <engine name="ios" spec="latest" />
+
 	<allow-navigation href="*" />
 	<access origin="*" />
 	<allow-intent href="*" />
