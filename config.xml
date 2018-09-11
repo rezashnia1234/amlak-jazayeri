@@ -90,8 +90,6 @@
     <edit-config file="*-Info.plist" mode="overwrite" platform="ios" target="UIViewControllerBasedStatusBarAppearance">
         <false />
     </edit-config>
-	
-
 	<!--<gap:plugin name="com.dawsonloudon.videoplayer" 	platform="android"	version="1.0.0" />-->
 	<!--<gap:plugin name="com.hutchind.cordova.plugins.streamingmedia"  source="plugins.cordova.io" />-->
 	<!-- <plugin spec="https://github.com/nchutchind/cordova-plugin-streaming-media.git" source="git" /> -->
@@ -184,6 +182,7 @@
         <splash density="land-xxxhdpi" src="res/screen/android/splash-land-xxxhdpi.png"/>
         -->
     </platform>
+
     <engine name="ios" spec="latest" />
 
 	<allow-navigation href="*" />
@@ -199,4 +198,3 @@
 	
 
 </widget>
-
